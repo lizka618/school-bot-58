@@ -1,6 +1,6 @@
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
-TOKEN = '8305366564:AAF1oivHY03uzdxDMf5gvv_GgbNpiDIA0sQ'
+TOKEN = os.getenv("TOKEN")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
@@ -13,4 +13,5 @@ def main():
     app.add_handler(CommandHandler('start',start))
     app.run_polling()
 if __name__ == "__main__":
+
     main()
